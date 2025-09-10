@@ -1,18 +1,5 @@
 # 任毅 - 个人简历网站
 
-## 项目简介
-
-这是任毅的个人简历网站，采用现代化的响应式设计，展示个人信息、技能能力、项目经历、实践经历和荣誉奖项。
-
-## 项目特色
-
-- 🎨 现代化Hero Section设计，突出个人品牌
-- 📱 完全响应式布局，支持各种设备
-- 🖼️ 项目图片轮播展示
-- ⚡ 纯HTML/CSS实现，无需构建工具
-- 🎯 优雅的动画效果和交互体验
-- 📧 直接邮件联系功能
-
 ## 目录结构
 
 ```
@@ -38,40 +25,6 @@ resume-github-deploy/
             ├── ACCO友佳陪诊——老年就医陪护新选择（PPT）-15.png
             └── ACCO友佳陪诊——老年就医陪护新选择（PPT）-20.png
 ```
-
-## 部署方法
-
-### 1. GitHub Pages 部署
-
-1. 将此项目上传到GitHub仓库
-2. 进入仓库设置 (Settings)
-3. 找到 Pages 选项
-4. 选择 Source 为 "Deploy from a branch"
-5. 选择 branch 为 "main" 或 "master"
-6. 选择 folder 为 "/ (root)"
-7. 点击 Save，等待部署完成
-
-### 2. Netlify 部署
-
-1. 登录 [Netlify](https://netlify.com)
-2. 点击 "New site from Git"
-3. 连接GitHub并选择此仓库
-4. 部署设置保持默认即可
-5. 点击 "Deploy site"
-
-### 3. Vercel 部署
-
-1. 登录 [Vercel](https://vercel.com)
-2. 点击 "New Project"
-3. 导入GitHub仓库
-4. 部署设置保持默认
-5. 点击 "Deploy"
-
-### 4. 本地预览
-
-直接在浏览器中打开 `index.html` 文件即可预览。
-
-或者使用简单的HTTP服务器：
 
 ```bash
 # 使用Python
