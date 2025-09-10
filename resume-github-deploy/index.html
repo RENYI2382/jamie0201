@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任毅 - 个人简历</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #007bff;
+            --secondary: #6c757d;
+            --dark: #121212;
+            --light: #fff;
+            --gray: #6c757d;
+            --bg-light: #f8f9fa;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            background: var(--dark);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            color: var(--light);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        /* Hero Section - 主视觉区域 */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, var(--light) 0%, var(--bg-light) 100%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-greeting {
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-name {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .name-highlight {
+            color: var(--primary);
+            position: relative;
+        }
+
+        .name-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), #0056b3);
+            border-radius: 2px;
+        }
+
+        .hero-profession {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-bio {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--light);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--dark);
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .hero-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .hero-avatar {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            border: 4px solid var(--light);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .contact-item span {
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* 内容区域 */
+        .content-section {
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-title i {
+            color: var(--primary);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .about-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .about-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .about-card p {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* 技能部分 */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-category h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .skill-level {
+            background: var(--primary);
+            color: var(--light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        /* 项目经历 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--light);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 项目图片轮播 */
+        .project-gallery {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .gallery-slides {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .gallery-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .gallery-slide.active {
+            opacity: 1;
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            pointer-events: none;
+        }
+
+        .gallery-prev,
+        .gallery-next {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            pointer-events: all;
+        }
+
+        .gallery-prev:hover,
+        .gallery-next:hover {
+            background: rgba(0, 0, 0, 0.7);
+            transform: scale(1.1);
+        }
+
+        .gallery-indicators {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .indicator.active {
+            background: var(--primary);
+        }
+
+        .indicator:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .project-description {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            background: var(--primary);
+            color: var(--light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .project-link {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .project-link.primary {
+            background: var(--primary);
+            color: var(--light);
+        }
+
+        .project-link.primary:hover {
+            background: #0056b3;
+        }
+
+        .project-link.secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .project-link.secondary:hover {
+            background: var(--primary);
+            color: var(--light);
+        }
+
+        /* 经历时间线 */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-left: 1rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid var(--light);
+        }
+
+        .timeline-header {
+            margin-bottom: 1rem;
+        }
+
+        .timeline-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-company {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-date {
+            color: var(--gray);
+            font-size: 0.875rem;
+        }
+
+        .timeline-description {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* 荣誉奖项 */
+        .honors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .honor-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .honor-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .honor-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .honor-description {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 2.5rem;
+            }
+
+            .hero-greeting {
+                font-size: 2rem;
+            }
+
+            .hero-name {
+                font-size: 2.5rem;
+            }
+
+            .hero-avatar {
+                width: 220px;
+                height: 220px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .about-grid,
+            .skills-grid,
+            .projects-grid,
+            .honors-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand">任毅</a>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link active">首页</a></li>
+                <li><a href="#about" class="nav-link">关于我</a></li>
+                <li><a href="#skills" class="nav-link">技能能力</a></li>
+                <li><a href="#projects" class="nav-link">项目经历</a></li>
+                <li><a href="#experience" class="nav-link">实践经历</a></li>
+                <li><a href="#honors" class="nav-link">荣誉奖项</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section - 主视觉区域 -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <!-- 左侧文字区域 -->
+            <div class="hero-text">
+                <h1 class="hero-greeting">你好，我是</h1>
+                <h2 class="hero-name">
+                    <span class="name-highlight">任毅</span>
+                </h2>
+                <p class="hero-profession">社会工作硕士研究生</p>
+                <p class="hero-bio">
+                    广州大学社会工作硕士在读，研究方向为医学社会学、计算社会科学。
+                    具备成熟的社会调研经验和扎实的理论基础，在项目管理、团队协作和志愿服务领域积累了丰富的实践经验。
+                    曾获清华大学Urban Cup全国三等奖、中国国际大学生创新大赛银奖等荣誉。
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        查看项目案例
+                    </a>
+                    <a href="mailto:reny0201@163.com" class="btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        联系我
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 右侧头像与联系方式 -->
+            <div class="hero-visual">
+                <img src="images/personal/个人照片.jpg" alt="任毅" class="hero-avatar">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>reny0201@163.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>15360566126</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 - 详细信息 -->
+    <section id="about" class="content-section">
+        <h2 class="section-title">
+            <i class="fas fa-user"></i>
+            个人简介
+        </h2>
+        <div class="about-grid">
+            <div class="about-card">
+                <h3>教育背景</h3>
+                <p>广州大学社会工作硕士在读（2024-2026）<br>
+                广州大学社会学学士（2020-2024）</p>
+            </div>
+            <div class="about-card">
+                <h3>研究方向</h3>
+                <p>医学社会学、计算社会科学<br>
+                社会调研分析、项目管理</p>
+            </div>
+            <div class="about-card">
+                <h3>核心能力</h3>
+                <p>项目管理与策划、社会调研分析<br>
+                团队协作管理、志愿服务组织</p>
+            </div>
+            <div class="about-card">
+                <h3>个人特质</h3>
+                <p>学习能力强、适应能力强、抗压能力强<br>
+                表达能力强、思维灵活</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 专业技能 -->
+    <section id="skills" class="content-section">
+        <h2 class="section-title">
+            <i class="fas fa-code"></i>
+            专业技能
+        </h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fas fa-cogs"></i> 专业技能</h3>
+                <div class="skill-item">
+                    <span class="skill-name">项目管理与策划</span>
+                    <span class="skill-level">精通</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">社会调研分析</span>
+                    <span class="skill-level">精通</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">团队协作管理</span>
+                    <span class="skill-level">熟练</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">活动策划执行</span>
+                    <span class="skill-level">精通</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3><i class="fas fa-hands-helping"></i> 社会工作</h3>
+                <div class="skill-item">
+                    <span class="skill-name">个案工作</span>
+                    <span class="skill-level">熟练</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">小组工作</span>
+                    <span class="skill-level">熟练</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">社区工作</span>
+                    <span class="skill-level">熟练</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">心理咨询</span>
+                    <span class="skill-level">良好</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3><i class="fas fa-laptop"></i> 技术工具</h3>
+                <div class="skill-item">
+                    <span class="skill-name">ABM仿真建模</span>
+                    <span class="skill-level">熟练</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Python数据分析</span>
+                    <span class="skill-level">良好</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">SPSS统计分析</span>
+                    <span class="skill-level">熟练</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Office办公软件</span>
+                    <span class="skill-level">精通</span>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3><i class="fas fa-language"></i> 语言能力</h3>
+                <div class="skill-item">
+                    <span class="skill-name">中文（母语）</span>
+                    <span class="skill-level">母语</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">英语六级（526分）</span>
+                    <span class="skill-level">良好</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">英文答辩经验</span>
+                    <span class="skill-level">熟练</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">学术英语写作</span>
+                    <span class="skill-level">良好</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目经历 -->
+    <section id="projects" class="content-section">
+        <h2 class="section-title">
+            <i class="fas fa-project-diagram"></i>
+            项目经历
+        </h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-gallery">
+                    <div class="gallery-container">
+                        <div class="gallery-slides">
+                            <div class="gallery-slide active">
+                                <img src="images/projects/tsinghua-urban-cup/参会照片1.jpg" alt="清华大学Urban Cup参会照片">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/projects/tsinghua-urban-cup/项目数据分析可视化.jpg" alt="项目数据分析可视化">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/projects/tsinghua-urban-cup/项目运行过程.jpg" alt="项目运行过程">
+                            </div>
+                        </div>
+                        <div class="gallery-controls">
+                            <button class="gallery-prev" onclick="changeSlide(this, -1)">‹</button>
+                            <button class="gallery-next" onclick="changeSlide(this, 1)">›</button>
+                        </div>
+                        <div class="gallery-indicators">
+                            <span class="indicator active" onclick="currentSlide(this, 1)"></span>
+                            <span class="indicator" onclick="currentSlide(this, 2)"></span>
+                            <span class="indicator" onclick="currentSlide(this, 3)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">清华大学 Urban Cup 2025 智能体挑战赛</h3>
+                    <p class="project-description">
+                        独立设计与开发《基于差序格局的洪灾ABM仿真系统》，首次将社会学"差序格局"理论进行计算建模，
+                        在上百支队伍中脱颖而出，斩获全国三等奖。通过构建200个智能体的仿真模型，
+                        证实基于中国社会关系模式的策略可使生存率提升8.2%，疏散时间缩短38.3%。
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">ABM仿真</span>
+                        <span class="project-tag">差序格局理论</span>
+                        <span class="project-tag">智能体建模</span>
+                        <span class="project-tag">全国三等奖</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link primary">演示视频</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-gallery">
+                    <div class="gallery-container">
+                        <div class="gallery-slides">
+                            <div class="gallery-slide active">
+                                <img src="images/projects/acco-project/ACCO友佳陪诊——老年就医陪护新选择（PPT）-01.png" alt="友佳陪诊项目介绍">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/projects/acco-project/ACCO友佳陪诊——老年就医陪护新选择（PPT）-05.png" alt="市场分析">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/projects/acco-project/ACCO友佳陪诊——老年就医陪护新选择（PPT）-10.png" alt="服务模式">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/projects/acco-project/ACCO友佳陪诊——老年就医陪护新选择（PPT）-15.png" alt="商业模式">
+                            </div>
+                            <div class="gallery-slide">
+                                <img src="images/projects/acco-project/ACCO友佳陪诊——老年就医陪护新选择（PPT）-20.png" alt="团队介绍">
+                            </div>
+                        </div>
+                        <div class="gallery-controls">
+                            <button class="gallery-prev" onclick="changeSlide(this, -1)">‹</button>
+                            <button class="gallery-next" onclick="changeSlide(this, 1)">›</button>
+                        </div>
+                        <div class="gallery-indicators">
+                            <span class="indicator active" onclick="currentSlide(this, 1)"></span>
+                            <span class="indicator" onclick="currentSlide(this, 2)"></span>
+                            <span class="indicator" onclick="currentSlide(this, 3)"></span>
+                            <span class="indicator" onclick="currentSlide(this, 4)"></span>
+                            <span class="indicator" onclick="currentSlide(this, 5)"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">"友佳陪诊"老年陪诊服务项目</h3>
+                    <p class="project-description">
+                        作为核心发起人，组建并领导5人跨学科团队，从0到1构建项目框架与商业模式。
+                        独立主导市场调研，通过对超过50位老年人及其子女的深度访谈，精准定位服务痛点。
+                        撰写的商业计划书在全校100+个项目中脱颖而出，最终斩获2024年中国国际大学生创新大赛银奖。
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">项目发起</span>
+                        <span class="project-tag">市场调研</span>
+                        <span class="project-tag">商业模式</span>
+                        <span class="project-tag">银奖</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="personal_PROgram/ACCOyokacompare/ACCO友佳陪诊：项目计划书.pdf" target="_blank" class="project-link primary">项目详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实践经历 -->
+    <section id="experience" class="content-section">
+        <h2 class="section-title">
+            <i class="fas fa-briefcase"></i>
+            实践经历
+        </h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">项目专员</h3>
+                    <p class="timeline-company">广州市益先社会工作研究中心</p>
+                    <p class="timeline-date">2025年6月 - 2025年9月</p>
+                </div>
+                <div class="timeline-description">
+                    <strong>商务客户拓展：</strong>实习4个月内，协助开拓并签约3家核心医养院区（沙园、龙凤、华林），将安宁疗护服务覆盖面扩大超60个家庭，并与椿萱茂、万颐等行业标杆企业建立合作。<br><br>
+                    <strong>项目活动策划：</strong>整体统筹"无痛伴行"癌痛管理项目，独立设计并执行了5场培训工作坊及线上直播，累计触达超过2000名相关方（医护、患者家属）。
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <h3 class="timeline-title">营销策划</h3>
+                    <p class="timeline-company">广州市友谊对外服务有限公司</p>
+                    <p class="timeline-date">2024年8月 - 2024年12月</p>
+                </div>
+                <div class="timeline-description">
+                    <strong>商务对接合作（BD）：</strong>负责高校渠道，4个月内成功与5所高校学院签署合作协议（谈判转化率达50%），为公司项目带来超过10,000次精准曝光。<br><br>
+                    <strong>项目营销推广：</strong>协助《西游·悟空》等大型演出营销，通过精准渠道策略，实现负责渠道售票量环比增长30%（净增100+张），业绩在团队中排名第一。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 荣誉奖项 -->
+    <section id="honors" class="content-section">
+        <h2 class="section-title">
+            <i class="fas fa-trophy"></i>
+            荣誉奖项
+        </h2>
+        <div class="honors-grid">
+            <div class="honor-item">
+                <h3 class="honor-title">清华大学Urban Cup 2025智能体挑战赛</h3>
+                <p class="honor-description">《基于差序格局的洪灾ABM仿真系统》获全国三等奖，首次将社会学理论进行计算建模。</p>
+            </div>
+            <div class="honor-item">
+                <h3 class="honor-title">中国国际大学生创新大赛</h3>
+                <p class="honor-description">"友佳陪诊"老年陪诊服务项目获银奖及10,000元项目启动资金。</p>
+            </div>
+            <div class="honor-item">
+                <h3 class="honor-title">广东省社科院研讨会</h3>
+                <p class="honor-description">"以人口高质量发展助推粤港澳大湾加快形成发展新质生产力研讨会"二等奖。</p>
+            </div>
+            <div class="honor-item">
+                <h3 class="honor-title">专业证书</h3>
+                <p class="honor-description">大学英语六级（CET-6）526分，具备全英文项目答辩经验。</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 导航激活态管理
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // 移除所有active类
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    // 为当前点击的链接添加active类
+                    this.classList.add('active');
+                });
+            });
+
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // 初始化图片轮播自动播放
+            initAutoSlide();
+        });
+
+        // 图片轮播功能
+        function changeSlide(button, direction) {
+            const gallery = button.closest('.project-gallery');
+            const slides = gallery.querySelectorAll('.gallery-slide');
+            const indicators = gallery.querySelectorAll('.indicator');
+            const activeSlide = gallery.querySelector('.gallery-slide.active');
+            const activeIndicator = gallery.querySelector('.indicator.active');
+            
+            let currentIndex = Array.from(slides).indexOf(activeSlide);
+            let newIndex = currentIndex + direction;
+            
+            if (newIndex >= slides.length) newIndex = 0;
+            if (newIndex < 0) newIndex = slides.length - 1;
+            
+            // 更新幻灯片
+            activeSlide.classList.remove('active');
+            slides[newIndex].classList.add('active');
+            
+            // 更新指示器
+            activeIndicator.classList.remove('active');
+            indicators[newIndex].classList.add('active');
+        }
+
+        function currentSlide(indicator, slideIndex) {
+            const gallery = indicator.closest('.project-gallery');
+            const slides = gallery.querySelectorAll('.gallery-slide');
+            const indicators = gallery.querySelectorAll('.indicator');
+            
+            // 移除所有active类
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(ind => ind.classList.remove('active'));
+            
+            // 添加active类到指定的幻灯片和指示器
+            slides[slideIndex - 1].classList.add('active');
+            indicators[slideIndex - 1].classList.add('active');
+        }
+
+        // 自动轮播功能
+        function initAutoSlide() {
+            const galleries = document.querySelectorAll('.project-gallery');
+            
+            galleries.forEach(gallery => {
+                setInterval(() => {
+                    const nextButton = gallery.querySelector('.gallery-next');
+                    changeSlide(nextButton, 1);
+                }, 4000); // 每4秒自动切换
+            });
+        }
+    </script>
+</body>
+</html>
